@@ -7,7 +7,59 @@
   font-family: "Poppins", sans-serif;
 }
 
-h1{
-    color: green;
-   
+.wrapper {
+  width: 30%;
+  height: 40px;
+  margin: 0 auto;
+
+  margin-top: 40px;
+  border-radius: 20px;
+}
+#search-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#search-input {
+  border: none;
+  border-bottom: 2px solid #000;
+  background: transparent;
+  outline: none;
+  font-size: 20px;
+  padding: 10px;
+}
+
+#search{
+   background-color: rgb(254, 98, 50);
+   padding: 8px 40px;
+   color: #fff;
+   cursor: pointer;
+   border: none;
+   outline: none;
+   transition: .3s ease-in-out;
+   border-radius: 20px;
+   font-size: 15px;
+   letter-spacing: 1.2px;
+}
+
+#buttons{
+ display: flex;
+ gap: 15px;
+ margin-top: 15px;
+ padding: 10px;
+}
+
+.button-value{
+    padding:3px 10px;
+    outline: none;
+   border-color: tomato;
+    cursor:pointer;
+    color: tomato;
+    border-radius: 30px;
+    background:transparent;
+}
+
+.active{
+    background-color:#fff;
+    color: tomato;
 }
