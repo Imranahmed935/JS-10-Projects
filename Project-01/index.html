@@ -21,14 +21,25 @@
         <button id="search">Search</button>
       </div>
       <div id="buttons">
-        <button class="button-value">All</button>
-        <button class="button-value">Hoodise</button>
-        <button class="button-value">Shirt</button>
-        <button class="button-value">Pent</button>
-        <button class="button-value">shoes</button>
-        <button class="button-value">watch</button>
+        <button class="button-value" onclick="searchProduct('all')">All</button>
+
+        <button class="button-value" onclick="searchProduct('Hoodie')">
+          Hoodie
+        </button>
+        <button class="button-value" onclick="searchProduct('Shirt')">
+          Shirt
+        </button>
+        <button class="button-value" onclick="searchProduct('Pent')">
+          Pent
+        </button>
+        <button class="button-value" onclick="searchProduct('shoes')">
+          shoes
+        </button>
+        <button class="button-value" onclick="searchProduct('Watch')">
+          watch
+        </button>
       </div>
-      <div class="products"></div>
+      <div id="products"></div>
     </div>
 
     <script src="js/script.js"></script>

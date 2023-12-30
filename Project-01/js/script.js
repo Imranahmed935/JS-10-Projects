@@ -2,114 +2,187 @@ let Products = {
   data: [
     {
       ProductName: "best hoodie",
-      category: "Top wear",
+      category: "Hoodie",
       price: "100",
-      image: "../images/images (1).jpg",
+      image: "./images/_MG_7477.JPG",
     },
     {
       ProductName: "best hoodie",
-      category: "Top wear",
+      category: "Hoodie",
       price: "100",
-      image: "../images/images (2).jpg",
+      image: "./images/_MG_7477.JPG",
     },
     {
       ProductName: "best hoodie",
-      category: "Top wear",
+      category: "Hoodie",
       price: "100",
-      image: "../images/images.jpg",
+      image: "./images/_MG_7477.JPG",
     },
     {
       ProductName: "best hoodie",
-      category: "Top wear",
+      category: "Hoodie",
       price: "100",
-      image: "../images/download (1).jpg",
+      image: "./images/_MG_7477.JPG",
     },
     {
       ProductName: "shirt best for man",
-      category: "super",
+      category: "Shirt",
       price: "200",
-      image: "../images/images (3).jpg",
+      image: "./images/_MG_7477.JPG",
     },
     {
       ProductName: "shirt best for man",
-      category: "super",
+      category: "Shirt",
       price: "200",
-      image: "../images/shirt.jpg",
+      image: "./images/_MG_7477.JPG",
     },
     {
       ProductName: "shirt best for man",
-      category: "super",
+      category: "Watch",
       price: "200",
-      image: "../images/fond.jpg",
+      image: "./images/_MG_7477.JPG",
     },
     {
       ProductName: "watch collection",
-      category: "special",
+      category: "Watch",
       price: "500",
-      image: "../images/watch (2).jpg",
+      image: "./images/_MG_7477.JPG",
     },
     {
       ProductName: "watch collection",
-      category: "special",
+      category: "Watch",
       price: "500",
-      image: "../images/w4).jpg",
+      image: "./images/_MG_7477.JPG",
     },
     {
       ProductName: "watch collection",
-      category: "special",
+      category: "Watch",
       price: "500",
-      image: "../images/w).jpg",
+      image: "./images/_MG_7477.JPG",
     },
 
     {
       ProductName: "pent collection",
-      category: "special",
+      category: "Pent",
       price: "600",
-      image: "../images/6873cc736c4e0b2afd5f779e4c92d491.jpg",
+      image: "./images/_MG_7477.JPG",
     },
     {
       ProductName: "pent collection",
-      category: "special",
+      category: "Pent",
       price: "600",
-      image: "../images/713wqBoyWpL._UX679_.jpg",
+      image: "./images/_MG_7477.JPG",
     },
     {
       ProductName: "pent collection",
-      category: "special",
+      category: "Pent",
       price: "600",
-      image: "../images/ga8ew_512.jpg",
+      image: "./images/_MG_7477.JPG",
     },
     {
       ProductName: "pent collection",
-      category: "special",
+      category: "Pent",
       price: "600",
-      image: "../images/Mens-Blue-Track-Pent.jpg",
+      image: "./images/_MG_7477.JPG",
     },
     {
       ProductName: "shoes collection",
-      category: "best",
+      category: "shoes",
       price: "1000",
-      image: "../images/shoes).jpg",
+      image: "./images/_MG_7477.JPG",
     },
     {
       ProductName: "shoes collection",
-      category: "best",
+      category: "shoes",
       price: "1000",
-      image: "../images/shoes(2).jpg",
+      image: "./images/_MG_7477.JPG",
     },
     {
       ProductName: "shoes collection",
-      category: "best",
+      category: "shoes",
       price: "1000",
-      image: "../images/p2153171.avif",
+      image: "./images/_MG_7477.JPG",
     },
     {
       ProductName: "shoes collection",
-      category: "best",
+      category: "shoes",
       price: "1000",
-      image: "../images/ROLLZ_22G-862_WHT-V.ORG_2.webp",
+      image: "./images/_MG_7477.JPG",
     },
   ],
 };
 
-console.log(Products.data.length);
+for (let i of Products.data) {
+  const card = document.createElement("div");
+  card.classList.add("card", i.category, "hide");
+
+  const imgContainer = document.createElement("div");
+  imgContainer.classList.add("img-container");
+
+  const image = document.createElement("img");
+  image.setAttribute("src", i.image);
+
+  imgContainer.appendChild(image);
+  card.appendChild(imgContainer);
+
+  const container = document.createElement("div");
+  container.classList.add("container");
+
+  const pName = document.createElement("h2");
+  pName.classList.add("product-name");
+  pName.innerText = i.ProductName.toUpperCase();
+  container.appendChild(pName);
+  card.appendChild(container);
+
+  const category = document.createElement("h3");
+  category.innerText = i.category;
+  card.appendChild(category);
+
+  const price = document.createElement("h5");
+  price.innerText = "$" + i.price;
+  card.appendChild(price);
+
+  document.getElementById("products").appendChild(card);
+}
+
+function searchProduct(value) {
+  let buttons = document.querySelectorAll(".button-value");
+  buttons.forEach((button) => {
+    if (value.toUpperCase() == button.innerText.toUpperCase()) {
+      button.classList.add("active");
+    } else {
+      button.classList.remove("active");
+    }
+  });
+
+  const element = document.querySelectorAll(".card");
+  element.forEach((element) => {
+    if (value == "all") {
+      element.classList.remove("hide");
+    } else {
+      if (element.classList.contains(value)) {
+        element.classList.remove("hide");
+      } else {
+        element.classList.add("hide");
+      }
+    }
+  });
+}
+
+document.getElementById("search").addEventListener("click", () => {
+  const searchInput = document.getElementById("search-input").value;
+  const elements = document.querySelectorAll(".product-name");
+  const cards = document.querySelectorAll(".card");
+
+  elements.forEach((element, index) => {
+    if (element.innerText.includes(searchInput)) {
+      cards[index].classList.remove("hide");
+    } else {
+      cards[index].classList.add("hide");
+    }
+  });
+});
+
+window.onload = () => {
+  searchProduct("all");
+};
