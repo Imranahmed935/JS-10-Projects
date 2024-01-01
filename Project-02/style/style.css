@@ -110,9 +110,57 @@
   outline: none;
   background: transparent;
   margin: 0 10px;
-  
 }
 
 .memberTable table tr td button i {
   font-size: 20px;
+}
+
+.modal {
+  background: #ece9e9;
+  width: 60%;
+  height: 500px;
+  top: 50%;
+  left: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  display: flex;
+}
+.left-modal {
+  width: 30%;
+  height: 100%;
+}
+.right-modal {
+  width: 70%;
+  height: 100%;
+  border-left: 5px solid skyblue;
+}
+
+.modal .left-modal .image-box {
+  width: 100%;
+}
+.modal .left-modal .image-box img {
+  width: 50%;
+  height: 50%;
+  margin: 20px;
+  border-radius: 50%;
+  padding: 10px;
+  position: relative;
+}
+.left-modal .file-icon i {
+  cursor: pointer;
+  color: skyblue;
+  font-size: 25px;
+  font-weight: 700;
+  position: absolute;
+  left: 170px;
+  top: 80px;
+}
+.left-modal .file-icon input {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 70px;
+  left: 170px;
+  opacity: 0;
 }
