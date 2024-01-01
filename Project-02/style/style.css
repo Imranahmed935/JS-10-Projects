@@ -119,12 +119,14 @@
 .modal {
   background: #ece9e9;
   width: 60%;
-  height: 500px;
+  height: auto;
   top: 50%;
   left: 50%;
   position: fixed;
   transform: translate(-50%, -50%);
   display: flex;
+  opacity: 0;
+  z-index: -1;
 }
 .left-modal {
   width: 30%;
@@ -163,4 +165,51 @@
   top: 70px;
   left: 170px;
   opacity: 0;
+}
+.right-modal .input-modal {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  /* padding: 30px; */
+}
+.right-modal .input-modal label {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px;
+  font-family: sans-serif;
+}
+.right-modal .input-modal input {
+  width: 70%;
+  outline: none;
+  border: none;
+  padding: 5px;
+  font-size: 15px;
+  margin: 10px;
+  border-radius: 5px;
+}
+.button1 button {
+  border: none;
+  outline: none;
+  padding: 10px 90px;
+  background-color: rgb(1, 212, 1);
+  margin-top: 30px;
+  font-size: 15px;
+  color: white;
+  font-weight: bold;
+  margin-left: 60px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+.modal .times {
+  position: absolute;
+  right: 0;
+  font-size: 25px;
+  margin-top: -12px;
+  cursor: pointer;
+  margin-right: -10px;
+}
+.modal .times i {
+  color: red;
 }
