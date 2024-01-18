@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style/style.css" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -19,7 +21,9 @@
     </div>
     <div class="navbar">
       <div class="buttons">
-        <button id="addBtn"><i class="fa fa-plus"></i>&nbsp; Add Member</button>
+        <button id="add-Btn">
+          <i class="fa fa-plus"></i>&nbsp; Add Member
+        </button>
         <button id="addBtn">
           <i class="fa fa-eraser"></i>&nbsp; Clear Filtering
         </button>
@@ -43,118 +47,7 @@
           <th>job title</th>
           <th>Action</th>
         </tr>
-        <tr>
-          <td>hello world</td>
-          <td>hello world</td>
-          <td>hello world</td>
-          <td>hello world</td>
-          <td>hello world</td>
-          <td>hello world</td>
-          <td>hello world</td>
-          <td>hello world</td>
-          <td>
-            <button><i class="fa fa-pencil"></i></button>
-            <button>
-              <i style="color: rgb(247, 16, 16)" class="fa fa-trash"></i>
-            </button>
-          </td>
-        </tr>
-        <tr>
-          <td>hello world</td>
-          <td>hello world</td>
-          <td>hello world</td>
-          <td>hello world</td>
-          <td>hello world</td>
-          <td>hello world</td>
-          <td>hello world</td>
-          <td>hello world</td>
-          <td>
-            <button><i class="fa fa-pencil"></i></button>
-            <button>
-              <i style="color: rgb(247, 16, 16)" class="fa fa-trash"></i>
-            </button>
-          </td>
-        </tr>
-        <tr>
-          <td>hello world</td>
-          <td>hello world</td>
-          <td>hello world</td>
-          <td>hello world</td>
-          <td>hello world</td>
-          <td>hello world</td>
-          <td>hello world</td>
-          <td>hello world</td>
-          <td>
-            <button><i class="fa fa-pencil"></i></button>
-            <button>
-              <i style="color: rgb(247, 16, 16)" class="fa fa-trash"></i>
-            </button>
-          </td>
-        </tr>
-        <tr>
-          <td>hello world</td>
-          <td>hello world</td>
-          <td>hello world</td>
-          <td>hello world</td>
-          <td>hello world</td>
-          <td>hello world</td>
-          <td>hello world</td>
-          <td>hello world</td>
-          <td>
-            <button><i class="fa fa-pencil"></i></button>
-            <button>
-              <i style="color: rgb(247, 16, 16)" class="fa fa-trash"></i>
-            </button>
-          </td>
-        </tr>
-        <tr>
-          <td>hello world</td>
-          <td>hello world</td>
-          <td>hello world</td>
-          <td>hello world</td>
-          <td>hello world</td>
-          <td>hello world</td>
-          <td>hello world</td>
-          <td>hello world</td>
-          <td>
-            <button><i class="fa fa-pencil"></i></button>
-            <button>
-              <i style="color: rgb(247, 16, 16)" class="fa fa-trash"></i>
-            </button>
-          </td>
-        </tr>
-        <tr>
-          <td>hello world</td>
-          <td>hello world</td>
-          <td>hello world</td>
-          <td>hello world</td>
-          <td>hello world</td>
-          <td>hello world</td>
-          <td>hello world</td>
-          <td>hello world</td>
-          <td>
-            <button><i class="fa fa-pencil"></i></button>
-            <button>
-              <i style="color: rgb(247, 16, 16)" class="fa fa-trash"></i>
-            </button>
-          </td>
-        </tr>
-        <tr>
-          <td>hello world</td>
-          <td>hello world</td>
-          <td>hello world</td>
-          <td>hello world</td>
-          <td>hello world</td>
-          <td>hello world</td>
-          <td>hello world</td>
-          <td>hello world</td>
-          <td>
-            <button><i class="fa fa-pencil"></i></button>
-            <button>
-              <i style="color: rgb(247, 16, 16)" class="fa fa-trash"></i>
-            </button>
-          </td>
-        </tr>
+        <tbody id="table-data"></tbody>
       </table>
     </div>
     <div class="modal">
@@ -162,47 +55,66 @@
       <div class="left-modal">
         <div class="image-box">
           <img
-            src="./images/FB_IMG_1629647752129.jpg"
+            src="images/profile.jpg"
             width="150"
             height="150"
+            id="profile-Pic"
             alt=""
           />
         </div>
         <div class="file-icon">
           <i class="fa fa-plus"></i>
-          <input type="file" />
+          <input type="file" id="upload-field" />
         </div>
       </div>
       <div class="right-modal">
-        <div class="input-modal">
-          <label for="id">Id</label>
-          <input type="id" placeholder="Id" />
-        </div>
-        <div class="input-modal">
-          <label for="name">Name</label>
-          <input type="name" placeholder="name" />
-        </div>
-        <div class="input-modal">
-          <label for="l-name">Last Name</label>
-          <input type="l-name" placeholder="l-name" />
-        </div>
-        <div class="input-modal">
-          <label for="email">E-mail</label>
-          <input type="email" placeholder="email" />
-        </div>
-        <div class="input-modal">
-          <label for="code">Office code</label>
-          <input type="code" placeholder="office code" />
-        </div>
-        <div class="input-modal">
-          <label for="job-title">Job title</label>
-          <input type="text" placeholder="job title" />
-        </div>
-        <div class="button1">
-          <button style="background-color: rgb(73, 73, 255)">Register</button>
-          <button style="filter: grayscale(90%)">Update</button>
-        </div>
+        <form id="form-register">
+          <div class="input-modal">
+            <label for="id">Id</label>
+            <input type="id" id="id" placeholder="Id" required />
+          </div>
+          <div class="input-modal">
+            <label for="name">Name</label>
+            <input type="name" id="name" placeholder="name" required />
+          </div>
+          <div class="input-modal">
+            <label for="l-name">Last Name</label>
+            <input type="l-name" id="l-name" placeholder="l-name" required />
+          </div>
+          <div class="input-modal">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" placeholder="email" required />
+          </div>
+          <div class="input-modal">
+            <label for="code">Office code</label>
+            <input type="code" required id="code" placeholder="office code" />
+          </div>
+          <div class="input-modal">
+            <label for="job-title">Job title</label>
+            <input
+              type="text"
+              id="job-title"
+              placeholder="job title"
+              required
+            />
+          </div>
+          <div class="button1">
+            <button
+              style="background-color: rgb(73, 73, 255)"
+              id="register-data"
+            >
+              Register
+            </button>
+            <button
+              id="update_Btn"
+              style="background-color: rgb(1, 212, 1) "
+            >
+              Update
+            </button>
+          </div>
+        </form>
       </div>
     </div>
+    <script src="./js/script.js"></script>
   </body>
 </html>
