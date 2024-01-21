@@ -157,3 +157,25 @@ uploadPic.onchange = function () {
     alert("file size is to long");
   }
 };
+
+// start search coding
+
+const searchItem = document.getElementById("searchP");
+searchItem.oninput = function () {
+  searchFunc();
+};
+
+function searchFunc() {
+  const tr = tableData.querySelectorAll("TR");
+  const filter = searchItem.value.toLowerCase();
+  let i;
+  for (i = 0; i < tr.length; i++) {
+    const td = tr[i].getElementsByTagName("TD")[2];
+    const id = td.innerHTML;
+    if (id.toLowerCase().indexOf(filter) > -1) {
+      tr[i].style.display = "";
+    } else {
+      tr[i].style.display = "none";
+    }
+  }
+}
